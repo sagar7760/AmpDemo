@@ -134,7 +134,7 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
     </div>
 
     <!-- Interactive AMP Form -->
-    <form method="POST" action-xhr="https://example.com/api/amp/submit" custom-validation-reporting="as-you-go">
+    <form method="POST" action-xhr="https://your-server.com/api/amp/submit" custom-validation-reporting="as-you-go">
       <div class="form-group">
         <label class="form-label">Are you currently employed by the same company you applied to? *</label>
         <amp-selector name="same_company" class="radio-group" layout="container">
@@ -220,7 +220,8 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
     </form>
   </div>
 </body>
-</html>`;
+</html>
+`;
 
   // Enhanced fallback HTML for non-AMP email clients
   const htmlContent = `<!DOCTYPE html>
@@ -237,12 +238,12 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
       max-width: 600px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f4f4f4;
+      background-color: #f8f9fa;
     }
     .email-container {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
     .header {
@@ -252,12 +253,14 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
       text-align: center;
     }
     .header h1 {
-      margin: 0 0 10px 0;
+      margin: 0;
       font-size: 28px;
+      font-weight: 700;
     }
     .header p {
-      margin: 0;
+      margin: 10px 0 0 0;
       opacity: 0.9;
+      font-size: 16px;
     }
     .content {
       padding: 30px;
@@ -272,7 +275,7 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
       border-left: 4px solid #3498db;
       padding: 20px;
       margin: 20px 0;
-      border-radius: 4px;
+      border-radius: 6px;
     }
     .benefits ul {
       margin: 10px 0;
@@ -284,9 +287,10 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
     .cta-section {
       text-align: center;
       margin: 30px 0;
-      padding: 20px;
+      padding: 25px;
       background: #f8f9fa;
       border-radius: 8px;
+      border: 2px dashed #3498db;
     }
     .cta-btn {
       display: inline-block;
@@ -295,9 +299,9 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
       padding: 15px 30px;
       text-decoration: none;
       border-radius: 8px;
-      font-weight: 600;
       font-size: 16px;
-      margin: 15px 0;
+      font-weight: 600;
+      margin: 10px 0;
       transition: transform 0.2s;
     }
     .cta-btn:hover {
@@ -311,15 +315,16 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
       margin-top: 15px;
     }
     .security-note {
-      background: #fff3cd;
-      border: 1px solid #ffeaa7;
+      background: #d4edda;
+      color: #155724;
       padding: 15px;
-      border-radius: 4px;
+      border-radius: 6px;
+      border-left: 4px solid #28a745;
       margin: 20px 0;
       font-size: 14px;
     }
     .footer {
-      background: #2c3e50;
+      background: #34495e;
       color: white;
       padding: 20px;
       text-align: center;
@@ -332,14 +337,14 @@ const generateAmpEmailTemplate = ({ applicantName, jobTitle, companyName, server
     @media (max-width: 600px) {
       body { padding: 10px; }
       .content { padding: 20px; }
-      .cta-btn { width: 100%; box-sizing: border-box; }
+      .cta-btn { padding: 12px 24px; font-size: 14px; }
     }
   </style>
 </head>
 <body>
   <div class="email-container">
     <div class="header">
-      <h1>📄 Resume Update Request</h1>
+      <h1>Resume Update Request</h1>
       <p>Static HTML Email - Click below to complete your application</p>
     </div>
     

@@ -25,7 +25,7 @@ const createTransporter = () => {
 
     return nodemailer.createTransport(config);
   } catch (error) {
-    console.error('❌ Error creating email transporter:', error);
+    console.error('Error creating email transporter:', error);
     throw error;
   }
 };

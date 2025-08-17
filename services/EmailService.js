@@ -1,5 +1,5 @@
 const { createTransporter } = require('../config/email');
-const { generateAmpEmailTemplate } = require('../templates/ampEmail');
+const { generateAmpEmailTemplate } = require('../templates/ampEmail_backup');
 const EmailLog = require('../models/EmailLog');
 
 class EmailService {
@@ -136,27 +136,27 @@ class EmailService {
   /**
    * Send bulk emails with automatic fallback
    */
-  async sendBulkResumeEmails(recipients) {
-    const results = [];
+  // async sendBulkResumeEmails(recipients) {
+  //   const results = [];
     
-    for (const recipient of recipients) {
-      try {
-        const result = await this.sendResumeUpdateEmail(recipient);
-        results.push({ ...result, email: recipient.to });
-      } catch (error) {
-        results.push({
-          success: false,
-          email: recipient.to,
-          error: error.message
-        });
-      }
+  //   for (const recipient of recipients) {
+  //     try {
+  //       const result = await this.sendResumeUpdateEmail(recipient);
+  //       results.push({ ...result, email: recipient.to });
+  //     } catch (error) {
+  //       results.push({
+  //         success: false,
+  //         email: recipient.to,
+  //         error: error.message
+  //       });
+  //     }
       
-      // Add delay between emails to avoid rate limiting
-      await new Promise(resolve => setTimeout(resolve, 1000));
-    }
+  //     // Add delay between emails to avoid rate limiting
+  //     await new Promise(resolve => setTimeout(resolve, 1000));
+  //   }
 
-    return results;
-  }
+  //   return results;
+  // }
 
   /**
    * Get email statistics

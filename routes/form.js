@@ -52,7 +52,7 @@ router.get('/resume-form', (req, res) => {
     applicantEmail: email || '',
     applicantName: name || '',
     jobTitle: job || '',
-    companyName: company || 'Hirefy',
+        companyName: company || 'KLE',
     token: token || '',
     serverUrl: `${req.protocol}://${req.get('host')}`
   };
@@ -111,7 +111,7 @@ router.post('/resume-form', async (req, res) => {
     }));
 
   } catch (error) {
-    console.error('❌ Error processing web form submission:', error);
+    console.error('Error processing web form submission:', error);
     res.status(500).send(generateErrorPage('Failed to process your submission. Please try again.'));
   }
 });

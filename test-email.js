@@ -9,7 +9,7 @@ const axios = require('axios');
 const BASE_URL = 'http://localhost:3000';
 const TEST_EMAILS = [
   {
-    to: 'swatibhadrapur@gmail.com',      // AMP supported
+    to: 'sagarsoradi011@gmail.com',      // AMP supported
     applicantName: 'John Doe',
     jobTitle: 'Software Developer',
     companyName: 'TechCorp'
